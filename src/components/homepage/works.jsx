@@ -32,7 +32,7 @@ const Works = () => {
 								alt="twitter"
 								className="work-image"
 							/> */}
-							<div className="work-title">Maverick Quantum (Sister company - MTX Group Inc.) </div>
+							<div className="work-title">Maverick Quantum </div>
 							<div className="work-subtitle">
 							Software Development Engineer
 							</div>

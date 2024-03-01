@@ -1,7 +1,7 @@
 {
 	"name": "reactfolio",
 	"version": "1.1.0",
-	"homepage": "https://kavleeeen.github.io/website",
+	"homepage": ".",
 	"description": "Personal portfolio template built using Reactjs",
 	"license": "MIT",
 	"private": true,

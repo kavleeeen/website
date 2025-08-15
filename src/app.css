@@ -121,3 +121,26 @@
 		width: 100%;
 	}
 }
+
+.typewriter {
+	display: inline-block;
+	overflow: hidden;
+	border-right: 3px solid #333;
+	white-space: nowrap;
+	font-size: 32px;
+	animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+}
+
+/* Disable typewriter on mobile */
+@media (max-width: 600px) {
+	.typewriter {
+		animation: none;
+		/* stop typing + cursor blink */
+		border-right: none;
+		/* remove cursor */
+		white-space: normal;
+		/* allow wrapping */
+		font-size: 20px;
+		/* adjust for mobile */
+	}
+}

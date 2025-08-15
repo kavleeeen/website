@@ -89,6 +89,10 @@ const Homepage = () => {
 					<div className="homepage-container">
 						<div className="homepage-first-area">
 							<div className="homepage-first-area-left-side">
+								<div className="homepage-name">
+									Hi, I’m <span className="highlight">Kavleen Sabharwal</span>
+								</div>
+
 								<div className="title homepage-title">
 									{INFO.homepage.title}
 								</div>
@@ -96,6 +100,10 @@ const Homepage = () => {
 								<div className="subtitle homepage-subtitle">
 									{INFO.homepage.description}
 								</div>
+
+								<a href="/projects" className="cta-button">
+									View My Projects →
+								</a>
 							</div>
 
 							<div className="homepage-first-area-right-side">

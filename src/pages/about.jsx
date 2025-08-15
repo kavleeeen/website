@@ -41,30 +41,22 @@ const About = () => {
 					<div className="about-container">
 						<div className="about-main">
 							<div className="about-right-side">
-								<div className="title about-title">
-									{INFO.about.title}
+								<div className="title about-title fade-slide-in" style={{animationDelay: "0.2s"}}>
+									<span className="typewriter">{INFO.about.title}</span>
 								</div>
+
 
 								<div className="subtitle about-subtitle">
 									{INFO.about.description}
-								</div>
-							</div>
-
-							<div className="about-left-side">
-								<div className="about-image-container">
-									<div className="about-image-wrapper">
-										<img
-											src="about.jpg"
-											alt="about"
-											className="about-image"
-										/>
-									</div>
 								</div>
 
 								<div className="about-socials">
 									<Socials />
 								</div>
 							</div>
+
+
+
 						</div>
 						<div className="about-socials-mobile">
 							<Socials />

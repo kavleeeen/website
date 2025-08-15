@@ -38,9 +38,9 @@ const Projects = () => {
 						</div>
 					</div>
 					<div className="projects-container">
-						<div className="title projects-title">
-							Things I’ve made trying to put my dent in the
-							universe.
+						<div className="title about-title fade-slide-in" style={{animationDelay: "0.2s"}}>
+							<span className="typewriter">	Things I’ve made trying to put my dent in the
+								universe.</span>
 						</div>
 
 						<div className="subtitle projects-subtitle">

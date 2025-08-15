@@ -23,8 +23,14 @@ const Project = (props) => {
 								<FontAwesomeIcon icon={faLink} />
 							</div>
 
-							<div className="project-link-text">{linkText}</div>
-						</div>
+							<a
+								href={link}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="project-link"
+							>
+								<div className="project-link-text">{linkText}</div>
+							</a>						</div>
 					</div>
 				</Link>
 			</div>

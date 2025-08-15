@@ -148,3 +148,31 @@
 		margin-right: -25px;
 	}
 }
+
+.homepage-name {
+	font-size: 24px;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+.highlight {
+	color: #007acc;
+	/* Accent color */
+	font-weight: 700;
+}
+
+.cta-button {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 12px 24px;
+	background-color: #007acc;
+	color: white;
+	text-decoration: none;
+	border-radius: 6px;
+	font-weight: 600;
+	transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+	background-color: #005fa3;
+}

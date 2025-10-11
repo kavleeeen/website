@@ -11,13 +11,12 @@ import {
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
-import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
 import AllProjects from "../components/projects/allProjects";
+import LazyImage from "../components/common/lazyImage";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
-import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
 
@@ -109,9 +108,9 @@ const Homepage = () => {
 							<div className="homepage-first-area-right-side">
 								<div className="homepage-image-container">
 									<div className="homepage-image-wrapper">
-										<img
+										<LazyImage
 											src="homepage.jpg"
-											alt="about"
+											alt="Kavleen Sabharwal - Full-stack Developer"
 											className="homepage-image"
 										/>
 									</div>
@@ -172,32 +171,15 @@ const Homepage = () => {
 							</a>
 						</div>
 
-						{/* <div className="homepage-projects">
+						<div className="homepage-projects">
 							<AllProjects />
-						</div> */}
+						</div>
 
-						{/* <div className="homepage-after-title">
-							<div className="homepage-articles">
-								{myArticles.map((article, index) => (
-									<div
-										className="homepage-article"
-										key={(index + 1).toString()}
-									>
-										<Article
-											key={(index + 1).toString()}
-											date={article().date}
-											title={article().title}
-											description={article().description}
-											link={"/article/" + (index + 1)}
-										/>
-									</div>
-								))}
-							</div>
-
+						<div className="homepage-after-title">
 							<div className="homepage-works">
 								<Works />
 							</div>
-						</div> */}
+						</div>
 
 						<div className="page-footer">
 							<Footer />

@@ -1,14 +1,82 @@
 :root {
 	/* ------- colors ------- */
-	--primary-color: #27272a;
+	--primary-color: #4a90e2;
+		--primary-hover: #357abd;
 	--secondary-color: #65656d;
 	--tertiary-color: #acacb4;
 	--quaternary-color: #e4e4e7;
 	--link-color: #14b8a6;
+	/* Light theme colors */
+		--background-color: #ffffff;
+		--card-background: #f8f9fa;
+		--text-primary: #2d3748;
+		--text-secondary: #4a5568;
+		--border-color: #e2e8f0;
+	
+		/* Dark theme colors */
+		--dark-background-color: #1a202c;
+		--dark-card-background: #2d3748;
+		--dark-text-primary: #f7fafc;
+		--dark-text-secondary: #e2e8f0;
+		--dark-border-color: #4a5568;
 	/* ---------------------- */
 
 	/* ------- fonts ------- */
 	--primary-font: "Heebo", sans-serif;
 	--secondary-font: "Roboto", sans-serif;
 	/* --------------------- */
+}
+
+/* Light theme (default) */
+body {
+	background-color: var(--background-color);
+	color: var(--text-primary);
+	transition: background-color 0.3s ease, color 0.3s ease;
+	font-family: var(--primary-font);
+	line-height: 1.6;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+	--background-color: var(--dark-background-color);
+	--card-background: var(--dark-card-background);
+	--text-primary: var(--dark-text-primary);
+	--text-secondary: var(--dark-text-secondary);
+	--border-color: var(--dark-border-color);
+}
+
+[data-theme="dark"] body {
+	background-color: var(--dark-background-color);
+	color: var(--dark-text-primary);
+}
+
+/* Global animations */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.fade-in-up {
+	animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in {
+	animation: fadeIn 0.4s ease-out;
 }

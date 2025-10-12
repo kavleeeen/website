@@ -1,7 +1,7 @@
 import React,{useEffect} from "react";
 import {Helmet} from "react-helmet";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBriefcase,faGraduationCap,faCode,faMapMarkerAlt,faCalendarAlt} from "@fortawesome/free-solid-svg-icons";
+import {faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons";
 
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";

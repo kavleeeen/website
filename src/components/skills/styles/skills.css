@@ -98,15 +98,6 @@
   left: 100%;
 }
 
-/* Dark mode styles */
-[data-theme="dark"] .skill-category {
-  background: var(--dark-card-background);
-  border-color: var(--dark-border-color);
-}
-
-[data-theme="dark"] .skill-category:hover {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
 
 /* Responsive design */
 @media (max-width: 768px) {

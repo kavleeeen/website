@@ -29,6 +29,20 @@ const SEO = [
 	},
 
 	{
+		page: "resume",
+		description:
+			"Kavleen Sabharwal - Full-stack & AI Engineer Resume. Experienced software developer with expertise in scalable systems, AI automation, and cross-team collaboration.",
+		keywords: ["Kavleen Sabharwal","Resume","CV","Full-stack Developer","AI Engineer","Software Engineer","Experience","Skills"],
+	},
+
+	{
+		page: "chatbot",
+		description:
+			"AI-powered meal recommendation chatbot to help you discover personalized recipes and meal plans. Get smart food suggestions based on your preferences and dietary needs.",
+		keywords: ["Kavleen Sabharwal","Chatbot","AI","Meal Recommendation","Food Bot","Recipe Assistant","Machine Learning"],
+	},
+
+	{
 		page: "contact",
 		description:
 			"If you're interested in collaborating on a project, feel free to reach out to me. I'm always open to new ideas and opportunities.",

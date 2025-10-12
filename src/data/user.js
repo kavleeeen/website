@@ -55,43 +55,21 @@ const INFO = {
 		{
 			title: "Food Recommendation Bot",
 			description:
-				"An AI-powered WhatsApp bot that suggests personalized daily meals and recipes using Firebase, Firestore, and the Gemini API.",
+				"An AI-powered chatbot that suggests personalized daily meals and recipes using Firebase, Firestore, and the Gemini API.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com/kavleenSabharwal/food-recommend",
-		},
-		{
-			title: "E-Commerce Platform",
-			description:
-				"A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com/kavleenSabharwal/ecommerce-platform",
-		},
-		{
-			title: "Task Management App",
-			description:
-				"A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features using React and Socket.io.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com/kavleenSabharwal/task-manager",
-		},
-		{
-			title: "Weather Dashboard",
-			description:
-				"A responsive weather dashboard with location-based forecasts, interactive maps, and weather alerts using React and OpenWeatherMap API.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com/kavleenSabharwal/weather-dashboard",
-		},
-		{
-			title: "Blog CMS",
-			description:
-				"A content management system for blogs with rich text editor, image uploads, SEO optimization, and admin panel built with React and Express.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com/kavleenSabharwal/blog-cms",
-		},
+			links: [
+				// {
+				// 	type: "view",
+				// 	text: "View",
+				// 	link: "/chatbot"
+				// },
+				{
+					type: "code",
+					text: "Code",
+					link: "https://github.com/kavleeeen/food-bot-backend"
+				}
+			]
+		}
 	],
 };
 

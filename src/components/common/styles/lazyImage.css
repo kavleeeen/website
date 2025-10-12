@@ -44,15 +44,6 @@
 	to { transform: rotate(360deg); }
 }
 
-/* Dark mode */
-[data-theme="dark"] .image-placeholder {
-	background: var(--dark-card-background);
-}
-
-[data-theme="dark"] .placeholder-spinner {
-	border-color: var(--dark-border-color);
-	border-top-color: var(--primary-color);
-}
 
 
 

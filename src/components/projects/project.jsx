@@ -1,15 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import {faCode,faEye} from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/project.css";
 
 const Project = (props) => {
-	const { logo, title, description, linkText, link } = props;
-
-	// Check if it's an internal route (starts with /)
-	const isInternalRoute=link.startsWith('/');
+	const {logo,title,description,links}=props;
 
 	const ProjectContent=() => (
 		<div className="project-container">
@@ -18,32 +15,76 @@ const Project = (props) => {
 			</div>
 			<div className="project-title">{title}</div>
 			<div className="project-description">{description}</div>
-			<div className="project-link">
-				<div className="project-link-icon">
-					<FontAwesomeIcon icon={faLink} />
-				</div>
-				<div className="project-link-text">{linkText}</div>
+			<div className="project-links">
+				{links?.map((linkItem,index) => {
+					const isInternalRoute=linkItem.link.startsWith('/');
+					const icon=linkItem.type==='code'? faCode:faEye;
+
+					return (
+						<div key={index} className="project-link">
+							{isInternalRoute? (
+								<Link
+									to={linkItem.link}
+									className={`project-link-wrapper project-link-${linkItem.type}`}
+									data-link-type={linkItem.type}
+								>
+									<div className="project-link-icon">
+										<FontAwesomeIcon icon={icon} />
+									</div>
+									<div className="project-link-text">{linkItem.text}</div>
+								</Link>
+							):(
+								<a
+									href={linkItem.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={`${linkItem.text} ${title} project`}
+									className={`project-link-wrapper project-link-${linkItem.type}`}
+									data-link-type={linkItem.type}
+								>
+									<div className="project-link-icon">
+											<FontAwesomeIcon icon={icon} />
+										</div>
+									<div className="project-link-text">{linkItem.text}</div>
+								</a>
+							)}
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	);
 
-	return (
-		<React.Fragment>
-			<div className="project">
-				{isInternalRoute? (
-					<Link to={link}>
-						<ProjectContent />
-					</Link>
-				):(
+	// For backward compatibility, check if old format is used
+	if(props.linkText&&props.link) {
+		const isInternalRoute=props.link.startsWith('/');
+		return (
+			<React.Fragment>
+				<div className="project">
+					{isInternalRoute? (
+						<Link to={props.link}>
+							<ProjectContent />
+						</Link>
+					):(
 						<a
-							href={link}
+								href={props.link}
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label={`View ${title} project`}
 						>
-						<ProjectContent />
-					</a>
-				)}
+							<ProjectContent />
+						</a>
+					)}
+				</div>
+			</React.Fragment>
+		);
+	}
+
+	// New format with multiple links
+	return (
+		<React.Fragment>
+			<div className="project">
+				<ProjectContent />
 			</div>
 		</React.Fragment>
 	);

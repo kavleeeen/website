@@ -1,7 +1,7 @@
 {
 	"name": "reactfolio",
 	"version": "1.1.0",
-	"homepage": ".",
+	"homepage": "https://kavleeeen.github.io/",
 	"description": "Personal portfolio template built using Reactjs",
 	"license": "MIT",
 	"private": true,
@@ -30,7 +30,7 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"predeploy": "npm run build",
-		"deploy": "main -d build"
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [

@@ -3,7 +3,6 @@ import {Routes,Route, useLocation} from "react-router-dom";
 import ReactGA from "react-ga4";
 
 import Homepage from "./pages/homepage";
-import About from "./pages/about";
 import Projects from "./pages/projects";
 import SkillsPage from "./pages/skills";
 import Resume from "./pages/resume";
@@ -28,8 +27,7 @@ function App() {
 	// Get active page for mobile navigation
 	const getActivePage = () => {
 		const path = location.pathname;
-		if (path === "/") return "home";
-		if (path === "/about") return "about";
+		if(path==="/") return "home";
 		if (path === "/projects") return "projects";
 		if (path === "/skills") return "skills";
 		if (path === "/resume") return "resume";
@@ -41,7 +39,6 @@ function App() {
 		<div className="App">
 			<Routes>
 				<Route path="/" element={<Homepage />} />
-				<Route path="/about" element={<About />} />
 				<Route path="/projects" element={<Projects />} />
 				<Route path="/skills" element={<SkillsPage />} />
 				<Route path="/resume" element={<Resume />} />

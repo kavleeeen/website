@@ -50,6 +50,12 @@
   margin-bottom: 4px;
 }
 
+/* Ensure image icon matches font icon sizing */
+.mobile-nav-icon--home {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
 .mobile-nav-label {
   font-size: 10px;
   font-weight: 500;

@@ -14,7 +14,7 @@ const INFO = {
 	homepage: {
 		title: "Full-stack & AI Engineer",
 		description:
-			"Tech Lead at Venwiz building AI-powered solutions. I architect scalable systems, mentor teams, and transform complex workflows into efficient automation. Passionate about cutting-edge AI technologies and creating impactful digital experiences.",
+			"Tech Lead at Venwiz building AI-powered solutions. I architect scalable systems, mentor teams, and transform complex workflows into efficient automation. Passionate about cutting-edge AI technologies and creating impactful digital experiences. As a Tech Lead at Venwiz, I've built AI-powered chatbots, automated complex workflows, and led security initiatives achieving A+ certification.",
 	},
 
 	about: {

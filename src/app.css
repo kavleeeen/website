@@ -46,6 +46,8 @@
 .content-wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
+	/* Add space for fixed navbar (top: 3vh; height ~40px) */
+		padding-top: calc(3vh + 48px);
 }
 
 .title {
@@ -106,6 +108,8 @@
 		max-width: 90%;
 		margin: 0 auto;
 		padding: 0 10px;
+		/* Navbar is hidden on mobile, so remove extra top padding */
+			padding-top: 0;
 	}
 
 	.page-content:before,

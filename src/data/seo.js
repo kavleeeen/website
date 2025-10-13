@@ -7,10 +7,7 @@ const SEO = [
 	},
 
 	{
-		page: "about",
-		description:
-			"Hi! I'm Kavleen Sabharwal, a full-stack developer based in Bangalore, India. I design the future through innovative web applications and solutions.",
-		keywords: ["Kavleen Sabharwal","About","Developer","Bangalore","India","Full-stack"],
+		// About page removed
 	},
 
 

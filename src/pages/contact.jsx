@@ -32,10 +32,8 @@ const Contact = () => {
 			<div className="page-content">
 				<NavBar active="contact" />
 				<div className="content-wrapper">
-					<div className="contact-logo-container">
-						<div className="contact-logo">
-							<Logo width={46} />
-						</div>
+					<div className="logo-container">
+						<Logo width={60} />
 					</div>
 
 					<div className="contact-container">

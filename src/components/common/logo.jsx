@@ -6,19 +6,27 @@ import INFO from "../../data/user";
 import "./styles/logo.css";
 
 const Logo = (props) => {
-	let { width, link } = props;
+	let { width = 60, link, showWrapper = true } = props;
 
 	if (link === undefined) {
 		link = true;
 	}
 
 	const imageElement = (
-		<img src={INFO.main.logo} alt="logo" className="logo" width={width} />
+		<img src={INFO.main.logo} alt="Kavleen Sabharwal - Home" className="logo" width={width} title="Go to Homepage" />
 	);
+
+	const logoContent = link ? <Link to="/" title="Go to Homepage">{imageElement}</Link> : imageElement;
 
 	return (
 		<React.Fragment>
-			{link ? <Link to="/">{imageElement}</Link> : imageElement}
+			{showWrapper ? (
+				<div className="logo-wrapper">
+					{logoContent}
+				</div>
+			) : (
+				logoContent
+			)}
 		</React.Fragment>
 	);
 };

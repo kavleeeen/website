@@ -32,10 +32,8 @@ const SkillsPage=() => {
       <div className="page-content">
         <NavBar active="skills" />
         <div className="content-wrapper">
-          <div className="skills-logo-container">
-            <div className="skills-logo">
-              <Logo width={46} />
-            </div>
+          <div className="logo-container">
+            <Logo width={60} />
           </div>
 
           <div className="skills-page-container">

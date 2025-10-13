@@ -33,10 +33,8 @@ const Resume=() => {
       <div className="page-content">
         <NavBar active="resume" />
         <div className="content-wrapper">
-          <div className="resume-logo-container">
-            <div className="resume-logo">
-              <Logo width={46} />
-            </div>
+          <div className="logo-container">
+            <Logo width={60} />
           </div>
 
           <div className="resume-container">

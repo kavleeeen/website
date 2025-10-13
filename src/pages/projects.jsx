@@ -32,10 +32,8 @@ const Projects = () => {
 			<div className="page-content">
 				<NavBar active="projects" />
 				<div className="content-wrapper">
-					<div className="projects-logo-container">
-						<div className="projects-logo">
-							<Logo width={46} />
-						</div>
+					<div className="logo-container">
+						<Logo width={60} />
 					</div>
 					<div className="projects-container">
 						<div className="title about-title fade-slide-in" style={{animationDelay: "0.2s"}}>

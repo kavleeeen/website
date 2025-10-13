@@ -12,15 +12,15 @@ const INFO = {
 	},
 
 	homepage: {
-		title: "Full-stack developer",
+		title: "Full-stack & AI Engineer",
 		description:
-			"I am a developer with expertise in Javascript. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies. I enjoy solving complex problems and learning new skills. I am passionate about creating high-quality code that follows best practices and industry standards. I am always looking for new challenges and opportunities to grow as a developer.",
+			"Tech Lead at Venwiz building AI-powered solutions. I architect scalable systems, mentor teams, and transform complex workflows into efficient automation. Passionate about cutting-edge AI technologies and creating impactful digital experiences.",
 	},
 
 	about: {
-		title: "Hi! I’m Kavleen. I live in Bangalore, India, where I design the future.",
+		title: "Hi! I'm Kavleen. I live in Bangalore, India, where I build the future with AI.",
 		description:
-			"I've worked on a variety of projects over the years and I'm proud of the progress I've made. Some of these projects are open-source and available for others to explore and contribute to. If you're interested in any of the projects I've worked on, please feel free to check out the code and suggest any improvements or enhancements you might have in mind. Collaborating with others is a great way to learn and grow, and I'm always open to new ideas and feedback.",
+			"As a Tech Lead at Venwiz, I've built AI-powered chatbots, automated complex workflows, and led security initiatives achieving A+ certification. I specialize in transforming manual processes into intelligent automation, reducing processing time from hours to minutes. Always excited to collaborate on innovative projects that push the boundaries of what's possible with technology.",
 	},
 
 

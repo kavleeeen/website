@@ -7,6 +7,13 @@
   padding: 2rem 1rem;
 }
 
+/* Add top padding for desktop view only */
+@media (min-width: 769px) {
+  .resume-container {
+    padding-top: 4rem; /* Extra padding for desktop nav bar */
+  }
+}
+
 /* Header */
 .resume-header {
   text-align: center;

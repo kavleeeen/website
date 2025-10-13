@@ -115,10 +115,12 @@
 
 	.title {
 		width: 100%;
+		text-align: center;
 	}
 
 	.subtitle {
 		width: 100%;
+		text-align: center;
 	}
 }
 

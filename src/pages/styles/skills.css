@@ -35,13 +35,17 @@
   }
 
   .skills-page-container {
-    padding: 1rem;
+    padding: 0.5rem 1rem; /* Reduced top padding for mobile */
   }
 
   .skills-page-title,
   .skills-page-subtitle {
     width: 100% !important;
     text-align: center;
+  }
+  
+  .skills-page-subtitle {
+    margin-bottom: 1.5rem; /* Reduced from 3rem for mobile */
   }
 }
 

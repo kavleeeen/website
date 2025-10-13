@@ -55,7 +55,15 @@
 	transition: color 0.3s ease-in-out;
 }
 
-@media (max-width: 600px) {
+/* Hide desktop navigation on mobile */
+@media (max-width: 768px) {
+	.nav-container {
+		display: none;
+	}
+}
+
+/* Keep original mobile styles for tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
 	.navbar {
 		margin-left: 25%;
 		margin-right: 25%;

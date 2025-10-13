@@ -1,7 +1,7 @@
 .projects-logo-container {
 	display: flex;
 	justify-content: left;
-	padding-top: 25px;
+	padding-top: 0; /* Removed - handled by global content-wrapper padding */
 }
 
 .projects-logo {

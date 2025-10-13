@@ -1,5 +1,11 @@
 /* Logo styling moved to common/logo.css */
 
+.about-logo-container {
+	display: flex;
+	justify-content: left;
+	padding-top: 0; /* Removed - handled by global content-wrapper padding */
+}
+
 .about-container {
 	display: flex;
 	flex-direction: column;

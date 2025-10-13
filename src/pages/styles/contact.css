@@ -4,7 +4,7 @@
 	display: flex;
 	justify-content: left;
 	align-items: center;
-	padding-top: 25px;
+	padding-top: 0; /* Removed - handled by global content-wrapper padding */
 }
 
 .contact-logo {

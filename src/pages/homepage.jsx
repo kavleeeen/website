@@ -11,7 +11,6 @@ import {
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
-import Works from "../components/homepage/works";
 import LazyImage from "../components/common/lazyImage";
 
 import INFO from "../data/user";
@@ -88,7 +87,7 @@ const Homepage = () => {
 						<div className="homepage-first-area">
 							<div className="homepage-first-area-left-side">
 								<div className="homepage-name">
-									Hi, I’m <span className="highlight">Kavleen Sabharwal</span>
+									Hi, I'm <span className="highlight">Kavleen Sabharwal</span>
 								</div>
 
 								<div className="title homepage-title">
@@ -98,10 +97,6 @@ const Homepage = () => {
 								<div className="subtitle homepage-subtitle">
 									{INFO.homepage.description}
 								</div>
-
-								<a href="/projects" className="cta-button">
-									View My Projects →
-								</a>
 							</div>
 
 							<div className="homepage-first-area-right-side">
@@ -170,12 +165,13 @@ const Homepage = () => {
 							</a>
 						</div>
 
-
-						<div className="homepage-after-title">
-							<div className="homepage-works">
-								<Works />
-							</div>
+						<div className="homepage-cta-section">
+							<a href="/projects" className="cta-button">
+								View My Projects →
+							</a>
 						</div>
+
+
 
 						<div className="page-footer">
 							<Footer />

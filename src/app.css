@@ -46,6 +46,7 @@
 .content-wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
+	padding-top: 100px; /* Add space for fixed logo */
 }
 
 .title {
@@ -106,6 +107,7 @@
 		max-width: 90%;
 		margin: 0 auto;
 		padding: 0 10px;
+		padding-top: 80px; /* Reduced padding for mobile */
 	}
 
 	.page-content:before,

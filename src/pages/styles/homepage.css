@@ -183,7 +183,7 @@
 
 @media (max-width: 768px) {
 	.homepage-cta-section {
-		padding: 20px 0 120px 0; /* Reduced top padding, increased bottom for mobile nav */
+		display: none; /* Hide View My Projects button on mobile */
 	}
 }
 

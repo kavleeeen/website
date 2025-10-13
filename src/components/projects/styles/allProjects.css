@@ -6,6 +6,7 @@
 	padding-bottom: 30px;
 	margin-left: -35px;
 	margin-right: -35px;
+	gap: 20px;
 }
 
 .all-projects-project {
@@ -15,8 +16,32 @@
 	overflow: hidden;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+	.all-projects-container {
+		margin-left: -15px;
+		margin-right: -15px;
+		gap: 15px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	
 	.all-projects-project {
-		width: calc(100% / 2);
+		width: calc(50% - 7.5px);
+		padding: 8px;
+	}
+}
+
+@media (max-width: 480px) {
+	.all-projects-container {
+		margin-left: -10px;
+		margin-right: -10px;
+		gap: 10px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	
+	.all-projects-project {
+		width: 100%;
+		padding: 5px;
 	}
 }

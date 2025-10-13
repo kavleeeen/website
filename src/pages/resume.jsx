@@ -5,7 +5,6 @@ import {faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons";
 
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
-import Logo from "../components/common/logo";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
@@ -33,9 +32,6 @@ const Resume=() => {
       <div className="page-content">
         <NavBar active="resume" />
         <div className="content-wrapper">
-          <div className="logo-container">
-            <Logo width={60} />
-          </div>
 
           <div className="resume-container">
             {/* Header */}

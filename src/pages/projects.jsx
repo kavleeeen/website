@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
-import Logo from "../components/common/logo";
 import AllProjects from "../components/projects/allProjects";
 
 import INFO from "../data/user";
@@ -32,9 +31,6 @@ const Projects = () => {
 			<div className="page-content">
 				<NavBar active="projects" />
 				<div className="content-wrapper">
-					<div className="logo-container">
-						<Logo width={60} />
-					</div>
 					<div className="projects-container">
 						<div className="title about-title fade-slide-in" style={{animationDelay: "0.2s"}}>
 							<span className="typewriter">	Things I’ve made trying to put my dent in the

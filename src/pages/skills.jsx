@@ -3,7 +3,6 @@ import {Helmet} from "react-helmet";
 
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
-import Logo from "../components/common/logo";
 import Skills from "../components/skills/skills";
 
 import INFO from "../data/user";
@@ -32,9 +31,6 @@ const SkillsPage=() => {
       <div className="page-content">
         <NavBar active="skills" />
         <div className="content-wrapper">
-          <div className="logo-container">
-            <Logo width={60} />
-          </div>
 
           <div className="skills-page-container">
             <div className="title skills-page-title fade-slide-in" style={{animationDelay: "0.2s"}}>

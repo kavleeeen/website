@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceSadTear } from "@fortawesome/free-regular-svg-icons";
 
 import NavBar from "../components/common/navBar";
-import Logo from "../components/common/logo";
 
 import INFO from "../data/user";
 
@@ -20,9 +19,6 @@ const Notfound = () => {
 			<div className="not-found page-content">
 				<NavBar />
 				<div className="content-wrapper">
-					<div className="logo-container">
-						<Logo width={60} />
-					</div>
 					<div className="notfound-container">
 						<div className="notfound-message">
 							<div className="notfound-title">

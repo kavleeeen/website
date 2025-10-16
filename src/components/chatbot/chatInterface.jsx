@@ -311,7 +311,7 @@ const ChatInterface=({user,onLogout,onClose,sessionId}) => {
           </button>
         </form>
         <div className="input-hint">
-          Press Enter to send, Shift+Enter for new line
+          Press Enter to send
         </div>
       </div>
     </div>

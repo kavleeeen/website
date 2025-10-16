@@ -109,7 +109,7 @@ const Homepage = () => {
 									className="homepage-social-icon"
 								/>
 							</a> */}
-							<a
+							{/* <a
 								href={`mailto:${INFO.main.email}`}
 								target="_blank"
 								rel="noreferrer"
@@ -119,7 +119,7 @@ const Homepage = () => {
 									className="homepage-social-icon"
 								/>
 							</a>
-						</div>
+						</div> */}
 
 						<div className="homepage-cta-section">
 							<a href="/projects" className="cta-button">

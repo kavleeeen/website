@@ -7,7 +7,7 @@ const INFO = {
 	},
 
 	socials: {
-		github: "https://github.com/kavleenSabharwal",
+		github: "https://github.com/kavleeeen",
 		linkedin: "https://www.linkedin.com/in/kavleen-s-954a60168",
 	},
 

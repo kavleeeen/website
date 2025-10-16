@@ -58,11 +58,11 @@ const INFO = {
 				"An AI-powered chatbot that suggests personalized daily meals and recipes using Firebase, Firestore, and the Gemini API.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			links: [
-				// {
-				// 	type: "view",
-				// 	text: "View",
-				// 	link: "/chatbot"
-				// },
+				{
+					type: "view",
+					text: "View",
+					link: "/chatbot"
+				},
 				{
 					type: "code",
 					text: "Code",

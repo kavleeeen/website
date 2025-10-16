@@ -13,12 +13,12 @@ const DashboardHeader=({onLogout,isAuthenticated}) => {
         <span>Home</span>
       </Link>
 
-      {isAuthenticated&&(
+      {/* {isAuthenticated&&(
         <button onClick={onLogout} className="header-button header-button-primary">
           <FontAwesomeIcon icon={faSignOutAlt} />
           <span>Logout</span>
         </button>
-      )}
+      )} */}
     </div>
   );
 };

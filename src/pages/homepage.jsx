@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React,{useEffect} from "react";
+import {Helmet} from "react-helmet";
 
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
 	faGithub,
 	faLinkedinIn,
+	faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 
 import Footer from "../components/common/footer";
@@ -17,12 +18,12 @@ import SEO from "../data/seo";
 
 import "./styles/homepage.css";
 
-const Homepage = () => {
+const Homepage=() => {
 	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
+		window.scrollTo(0,0);
+	},[]);
 
-	const currentSEO = SEO.find((item) => item.page === "home");
+	const currentSEO=SEO.find((item) => item.page==="home");
 
 	return (
 		<React.Fragment>
@@ -89,13 +90,24 @@ const Homepage = () => {
 									className="homepage-social-icon"
 								/>
 							</a>
-						<a
+							<a
 								href={INFO.socials.linkedin}
 								target="_blank"
 								rel="noreferrer"
 							>
 								<FontAwesomeIcon
 									icon={faLinkedinIn}
+									className="homepage-social-icon"
+								/>
+							</a>
+							<a
+								href={INFO.socials.whatsapp}
+								target="_blank"
+								rel="noreferrer"
+								aria-label="Message on WhatsApp"
+							>
+								<FontAwesomeIcon
+									icon={faWhatsapp}
 									className="homepage-social-icon"
 								/>
 							</a>
@@ -119,7 +131,8 @@ const Homepage = () => {
 									className="homepage-social-icon"
 								/>
 							</a>
-						</div> */}
+					*/}
+						</div>
 
 						<div className="homepage-cta-section">
 							<a href="/projects" className="cta-button">

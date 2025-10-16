@@ -9,6 +9,8 @@ const INFO = {
 	socials: {
 		github: "https://github.com/kavleeeen",
 		linkedin: "https://www.linkedin.com/in/kavleen-s-954a60168",
+		// WhatsApp deep link: uses international format without '+'
+		whatsapp: "https://wa.me/918582807713?text=Hi%20Kavleen%2C%20I%20found%20your%20portfolio%20and%20would%20love%20to%20connect!",
 	},
 
 	homepage: {

@@ -1,7 +1,7 @@
 // Complete Food Bot API Service
 // Implements all endpoints from the API reference
 
-const API_BASE_URL=process.env.REACT_APP_API_BASE_URL||'https://food-bot-backend-gwvsmxazbq-el.a.run.app';
+const API_BASE_URL=process.env.REACT_APP_API_BASE_URL||'https://food-bot-backend-wiyrvumxlq-el.a.run.app';
 
 class FoodBotAPI {
   constructor() {

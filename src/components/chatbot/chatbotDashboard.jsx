@@ -75,6 +75,7 @@ const ChatbotDashboard=({user,onLogout}) => {
             className="open-chatbot-button"
             onClick={handleOpenChatbot}
           >
+            {/* button text should be centered */}
             <FontAwesomeIcon icon={faRobot} />
             <span style={{paddingLeft: "2px"}}>Open Meal Chatbot</span>
           </button>

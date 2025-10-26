@@ -71,6 +71,13 @@ const ChatbotDashboard=({user,onLogout}) => {
             dietary restrictions, and nutritional goals. Our AI-powered chatbot
             will help you discover new recipes and plan your meals.
           </p>
+          <button
+            className="open-chatbot-button"
+            onClick={handleOpenChatbot}
+          >
+            <FontAwesomeIcon icon={faRobot} />
+            <span style={{paddingLeft: "2px"}}>Open Meal Chatbot</span>
+          </button>
         </div>
 
         {!isChatbotOpen&&(
@@ -101,39 +108,26 @@ const ChatbotDashboard=({user,onLogout}) => {
           </div>
         )}
 
-        {!isChatbotOpen&&(
-          <div className="chatbot-section">
-            <div className="chatbot-preview">
-              <h3 className="preview-title">Ready to get started?</h3>
-              <p className="preview-description">Click the button below to open your personal meal recommendation chatbot.</p>
 
-              <button
-                className="open-chatbot-button"
-                onClick={handleOpenChatbot}
-              >
-                <FontAwesomeIcon icon={faRobot} />
-                <span>Open Meal Chatbot</span>
-              </button>
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Chat Interface Modal */}
-      {isChatbotOpen&&(
-        <div className="chatbot-modal">
-          <div className="chatbot-modal-content">
-            <div className="chatbot-interface-container">
-              <ChatInterface
-                user={user}
-                onLogout={onLogout}
-                onClose={handleCloseChatbot}
-                sessionId={chatbotSessionId}
-              />
+      {
+        isChatbotOpen&&(
+          <div className="chatbot-modal">
+            <div className="chatbot-modal-content">
+              <div className="chatbot-interface-container">
+                <ChatInterface
+                  user={user}
+                  onLogout={onLogout}
+                  onClose={handleCloseChatbot}
+                  sessionId={chatbotSessionId}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )
+      }
     </div>
   );
 };

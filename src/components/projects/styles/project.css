@@ -3,8 +3,14 @@
 .project {
 	mix-blend-mode: normal;
 	border-radius: 20px;
-	opacity: 0.8;
+	opacity: 0.95;
 	height: 100%;
+		min-height: 340px;
+			/* ensure equal card height on desktop */
+			display: flex;
+			/* allow inner container to stretch */
+			box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+				transition: box-shadow 200ms ease, transform 200ms ease, background-color 200ms ease, opacity 200ms ease;
 }
 
 .project a {
@@ -12,9 +18,9 @@
 }
 
 .project:hover {
-	background: #fafafa;
+		background: #fafafa;
 	opacity: 1;
-	transition: background-color 0.3s ease-in-out;
+		box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
 }
 
 .project:hover .project-link-wrapper {
@@ -23,7 +29,10 @@
 }
 
 .project-container {
-	padding: 30px;
+	padding: 28px;
+		display: flex;
+			flex-direction: column;
+			width: 100%;
 }
 
 .project-logo {
@@ -37,7 +46,7 @@
 .project-title {
 	font-family: var(--secondary-font);
 	color: var(--primary-color);
-	font-size: 16px;
+	font-size: 17px;
 	padding-top: 15px;
 	margin-bottom: 1em;
 	font-weight: 700;
@@ -45,20 +54,48 @@
 
 .project-description {
 	color: var(--secondary-color);
+	line-height: 1.6;
 }
 
+/* REPLACE .project-links block to align left and reduce gap */
+		/* Actions area */
 .project-links {
 	display: flex;
-	flex-direction: row;
-	gap: 15px;
-	padding-top: 25px;
-	justify-content: center;
+		flex-direction: column;
+			/* stack buttons vertically by default */
+			gap: 10px;
+				padding-top: 24px;
+			justify-content: flex-start;
+				align-items: flex-start;
+				margin-top: auto;
+				/* push buttons to bottom for consistent alignment */
 }
 .project-link {
 	display: flex;
 	align-items: center;
-	flex: 1;
-		max-width: 120px;
+		flex: none;
+			width: 170px;
+			/* fixed button width for alignment */
+		}
+		
+		/* Plain text links for FE/BE */
+		.project-text-item {
+			width: auto;
+		}
+		
+		.project-text-link {
+			color: var(--link-color);
+			text-decoration: none;
+			font-weight: 600;
+			display: inline-block;
+			padding-left: 10px;
+			/* added left padding */
+			font-size: 1.05em;
+			/* adjusted size */
+		}
+		
+		.project-text-link:hover {
+			text-decoration: underline;
 	}
 	
 	.project-link-wrapper {
@@ -68,27 +105,47 @@
 		text-decoration: none;
 		color: white;
 		width: 100%;
-		padding: 12px 20px;
+				height: 46px;
+					/* fixed height for all buttons */
+					padding: 0 18px;
+					/* horizontal padding only */
 		border-radius: 12px;
 		font-weight: 700;
 		font-size: 14px;
 		text-transform: uppercase;
 		letter-spacing: 0.5px;
-		transition: all 0.3s ease;
+		transition: background-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 		position: relative;
 		overflow: hidden;
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 	}
 	
-	/* View Button - Green Gradient */
+/* View Button - Minimal outline style */
 	.project-link-view {
-		background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+	background: transparent;
+		color: #16a34a;
+		/* emerald */
+		border: 1px solid #16a34a;
+		box-shadow: none;
+		text-shadow: none;
+			height: 42px;
+		/* slightly smaller */
 	}
 	
 	.project-link-view:hover {
-		background: linear-gradient(135deg, #059669 0%, #047857 50%, #065f46 100%);
-		transform: translateY(-3px) scale(1.05);
-		box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+		background: rgba(22, 163, 74, 0.08);
+		transform: translateY(-1px);
+		box-shadow: none;
+	}
+	
+	.project-link-view:focus-visible {
+		outline: 2px solid rgba(22, 163, 74, 0.5);
+		outline-offset: 2px;
+	}
+	
+	/* Disable shimmer on minimal button */
+	.project-link-view::before {
+		display: none;
 	}
 	
 	/* Code Button - Blue Gradient */
@@ -98,8 +155,8 @@
 	
 	.project-link-code:hover {
 		background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
-		transform: translateY(-3px) scale(1.05);
-		box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+		transform: translateY(-2px) scale(1.03);
+			box-shadow: 0 8px 22px rgba(59, 130, 246, 0.35);
 	}
 	
 	/* Shimmer effect for both buttons */
@@ -111,17 +168,38 @@
 		width: 100%;
 		height: 100%;
 		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-		transition: left 0.6s ease;
+		transition: left 0.5s ease;
 	}
 	
 	.project-link-wrapper:hover::before {
 		left: 100%;
 	}
 	
-	.project-link-wrapper:active {
+.project-link-wrapper:active {
 		transform: translateY(-1px) scale(1.02);
 }
 
+/* FE Code - Indigo Gradient */
+.project-link-fe {
+	background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);
+}
+
+		.project-link-fe:hover {
+	background: linear-gradient(135deg, #4f46e5 0%, #4338ca 50%, #3730a3 100%);
+		transform: translateY(-2px) scale(1.03);
+			box-shadow: 0 8px 22px rgba(99, 102, 241, 0.35);
+}
+
+/* BE Code - Purple Gradient */
+.project-link-be {
+	background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+}
+
+		.project-link-be:hover {
+	background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #5b21b6 100%);
+		transform: translateY(-2px) scale(1.03);
+			box-shadow: 0 8px 22px rgba(139, 92, 246, 0.35);
+}
 .project-link-icon {
 	font-size: 16px;
 		margin-right: 8px;
@@ -137,13 +215,13 @@
 		height: auto;
 		min-height: 280px;
 		border-radius: 16px;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-		transition: all 0.3s ease;
+		box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+			transition: box-shadow 200ms ease, transform 200ms ease;
 	}
 	
 	.project:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+		transform: translateY(-4px);
+			box-shadow: 0 8px 26px rgba(0, 0, 0, 0.14);
 	}
 	
 	.project-container {
@@ -170,19 +248,23 @@
 	
 	.project-links {
 		flex-direction: column;
+					/* keep vertical on mobile */
 		gap: 12px;
 		padding-top: 0;
 	}
 	
 	.project-link {
-		max-width: none;
+				width: 100%;
+					/* full-width stacked buttons on mobile */
 	}
 	
 	.project-link-wrapper {
-		padding: 16px 24px;
+				height: 50px;
+					/* slightly taller for touch targets */
+					padding: 0 22px;
 		font-size: 15px;
 		border-radius: 10px;
-		box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 3px 12px rgba(0, 0, 0, 0.14);
 	}
 	
 	.project-link-wrapper:hover {
@@ -214,7 +296,7 @@
 	}
 	
 	.project-link-wrapper {
-		padding: 14px 20px;
+		padding: 14px 18px;
 		font-size: 14px;
 	}
 	
@@ -225,5 +307,31 @@
 	
 	.project-link-text {
 		font-size: 14px;
+	}
+}
+
+/* Focus visibility for keyboard users */
+.project a:focus-visible,
+.project .project-link-wrapper:focus-visible,
+.project .project-text-link:focus-visible {
+	outline: 3px solid rgba(59, 130, 246, 0.6);
+	outline-offset: 3px;
+	border-radius: 10px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+	.project,
+	.project-link-wrapper,
+	.project-link-wrapper::before {
+		transition: none !important;
+		animation: none !important;
+	}
+
+	.project:hover,
+	.project-link-wrapper:hover {
+		transform: none !important;
+		box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06) !important;
 	}
 }

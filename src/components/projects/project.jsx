@@ -17,40 +17,60 @@ const Project = (props) => {
 			<div className="project-description">{description}</div>
 			<div className="project-links">
 				{links?.map((linkItem,index) => {
-					const isInternalRoute=linkItem.link.startsWith('/');
-					const icon=linkItem.type==='code'? faCode:faEye;
+									const isInternalRoute=linkItem.link.startsWith('/');
+									const isTextLink=linkItem.type==='fe'||linkItem.type==='be';
+									const icon=linkItem.type==='view'? faEye:faCode;
 
-					return (
-						<div key={index} className="project-link">
-							{isInternalRoute? (
-								<Link
-									to={linkItem.link}
-									className={`project-link-wrapper project-link-${linkItem.type}`}
-									data-link-type={linkItem.type}
-								>
-									<div className="project-link-icon">
-										<FontAwesomeIcon icon={icon} />
-									</div>
-									<div className="project-link-text">{linkItem.text}</div>
-								</Link>
-							):(
-								<a
-									href={linkItem.link}
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label={`${linkItem.text} ${title} project`}
-									className={`project-link-wrapper project-link-${linkItem.type}`}
-									data-link-type={linkItem.type}
-								>
-									<div className="project-link-icon">
-											<FontAwesomeIcon icon={icon} />
+									// Render FE/BE as plain text hyperlinks
+									if(isTextLink) {
+										return (
+											<div key={index} className="project-link project-text-item">
+												<a
+													href={linkItem.link}
+													target="_blank"
+													rel="noopener noreferrer"
+													aria-label={`${linkItem.text} ${title} project`}
+													className="project-text-link"
+													data-link-type={linkItem.type}
+												>
+													{linkItem.text}
+												</a>
+											</div>
+										);
+									}
+
+									// Default: button-style link (e.g., View)
+									return (
+										<div key={index} className="project-link">
+												{isInternalRoute? (
+													<Link
+														to={linkItem.link}
+														className={`project-link-wrapper project-link-${linkItem.type}`}
+														data-link-type={linkItem.type}
+													>
+														<div className="project-link-icon">
+															<FontAwesomeIcon icon={icon} />
+														</div>
+														<div className="project-link-text">{linkItem.text}</div>
+													</Link>
+											):(
+												<a
+													href={linkItem.link}
+													target="_blank"
+													rel="noopener noreferrer"
+													aria-label={`${linkItem.text} ${title} project`}
+													className={`project-link-wrapper project-link-${linkItem.type}`}
+													data-link-type={linkItem.type}
+												>
+													<div className="project-link-icon">
+														<FontAwesomeIcon icon={icon} />
+													</div>
+													<div className="project-link-text">{linkItem.text}</div>
+												</a>
+											)}
 										</div>
-									<div className="project-link-text">{linkItem.text}</div>
-								</a>
-							)}
-						</div>
-					);
-				})}
+									);
+								})}
 			</div>
 		</div>
 	);

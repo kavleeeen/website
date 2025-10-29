@@ -66,9 +66,32 @@ const INFO = {
 					link: "/chatbot"
 				},
 				{
-					type: "code",
-					text: "Code",
+					type: "be",
+					text: "BE Code",
 					link: "https://github.com/kavleeeen/food-bot-backend"
+				}
+			]
+		},
+		{
+			title: "Collaborative Design Editor",
+			description:
+				"Real-time collaborative design editor for teams to co-create visually.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+			links: [
+				{
+					type: "view",
+					text: "View",
+					link: "https://editor.kavleen.in"
+				},
+				{
+					type: "fe",
+					text: "FE Code",
+					link: "https://github.com/kavleeeen/editor"
+				},
+				{
+					type: "be",
+					text: "BE Code",
+					link: "https://github.com/kavleeeen/editor-backend"
 				}
 			]
 		}

@@ -19,7 +19,7 @@
 	flex-direction: column;
 	height: 100%;
 	margin: 0;
-	padding-top: 120px;
+	padding-top: 104px;
 }
 
 @media (max-width: 600px) {
@@ -29,5 +29,21 @@
 
 	.projects-project {
 		width: calc(100% / 2);
+	}
+}
+
+/* Improve subtitle readability only within Projects page */
+.projects-subtitle {
+	max-width: 70ch;
+	color: var(--secondary-color);
+	line-height: 1.75;
+	margin-top: 10px;
+	margin-bottom: 8px;
+}
+
+/* Subtle entrance animation on title (already has fade-slide-in class) */
+@media (prefers-reduced-motion: reduce) {
+	.projects-subtitle {
+		animation: none !important;
 	}
 }

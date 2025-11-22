@@ -7,6 +7,8 @@ import Projects from "./pages/projects";
 import SkillsPage from "./pages/skills";
 import Resume from "./pages/resume";
 import Chatbot from "./pages/chatbot";
+import ResumeParser from "./pages/resumeParser";
+import ResumeParserResults from "./pages/resumeParserResults";
 import Contact from "./pages/contact";
 import Notfound from "./pages/404";
 
@@ -43,6 +45,8 @@ function App() {
 				<Route path="/skills" element={<SkillsPage />} />
 				<Route path="/resume" element={<Resume />} />
 				<Route path="/chatbot" element={<Chatbot />} />
+				<Route path="/resume-parser" element={<ResumeParser />} />
+				<Route path="/resume-parser/results/:id" element={<ResumeParserResults />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="*" element={<Notfound />} />
 			</Routes>

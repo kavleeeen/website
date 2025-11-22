@@ -94,6 +94,19 @@ const INFO = {
 					link: "https://github.com/kavleeeen/editor-backend"
 				}
 			]
+		},
+		{
+			title: "Resume Parser RAG",
+			description:
+				"An AI-powered resume parser with Retrieval-Augmented Generation for intelligent document analysis and extraction.",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+			links: [
+				{
+					type: "view",
+					text: "View",
+					link: "/resume-parser"
+				}
+			]
 		}
 	],
 };

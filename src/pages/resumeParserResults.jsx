@@ -1,8 +1,8 @@
 import React,{useEffect,useState,useRef} from "react";
 import {Helmet} from "react-helmet";
-import {useParams} from "react-router-dom";
+import {useParams,Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCheck,faXmark,faSpinner,faCheckCircle,faExclamationCircle,faPaperPlane,faUser,faRobot,faCommentDots,faChevronUp,faChevronDown} from "@fortawesome/free-solid-svg-icons";
+import {faCheck,faXmark,faSpinner,faCheckCircle,faExclamationCircle,faPaperPlane,faUser,faRobot,faCommentDots,faChevronUp,faChevronDown,faHome} from "@fortawesome/free-solid-svg-icons";
 
 import Footer from "../components/common/footer";
 
@@ -228,10 +228,17 @@ const ResumeParserResults=() => {
         <div className="content-wrapper">
           <div className="resume-parser-container">
             <div className="resume-parser-dashboard">
-              <h1 className="resume-parser-title">Resume Parser RAG</h1>
-              <p className="resume-parser-subtitle">
-                Match Analysis Results
-              </p>
+              <div className="resume-parser-header">
+                <Link to="/" className="home-button" title="Go to Home">
+                  <FontAwesomeIcon icon={faHome} />
+                </Link>
+                <div className="resume-parser-title-wrapper">
+                  <h1 className="resume-parser-title">Resume Parser RAG</h1>
+                  <p className="resume-parser-subtitle">
+                    Match Analysis Results
+                  </p>
+                </div>
+              </div>
 
               {/* Loading State */}
               {isLoading&&(

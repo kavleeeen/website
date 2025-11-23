@@ -1,8 +1,8 @@
 import React,{useEffect,useState} from "react";
 import {Helmet} from "react-helmet";
-import {useNavigate} from "react-router-dom";
+import {useNavigate,Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFilePdf,faFileText,faUpload,faTimes,faSpinner,faCheckCircle,faExclamationCircle} from "@fortawesome/free-solid-svg-icons";
+import {faFilePdf,faFileText,faUpload,faTimes,faSpinner,faCheckCircle,faExclamationCircle,faHome} from "@fortawesome/free-solid-svg-icons";
 
 import Footer from "../components/common/footer";
 
@@ -173,10 +173,17 @@ const ResumeParser=() => {
         <div className="content-wrapper">
           <div className="resume-parser-container">
             <div className="resume-parser-dashboard">
-              <h1 className="resume-parser-title">Resume Parser RAG</h1>
-              <p className="resume-parser-subtitle">
-                Upload your resume and job description to get AI-powered analysis
-              </p>
+              <div className="resume-parser-header">
+                <Link to="/" className="home-button" title="Go to Home">
+                  <FontAwesomeIcon icon={faHome} />
+                </Link>
+                <div className="resume-parser-title-wrapper">
+                  <h1 className="resume-parser-title">Resume Parser RAG</h1>
+                  <p className="resume-parser-subtitle">
+                    Upload your resume and job description to get AI-powered analysis
+                  </p>
+                </div>
+              </div>
 
               <form className="resume-parser-form" onSubmit={handleSubmit}>
                 {/* Resume Upload */}

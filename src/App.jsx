@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 import { profile, routes, suggestions, intros } from './data/content.js'
 import Section from './components/Sections.jsx'
-import { Starburst, ArrowUp, Sun, Moon } from './components/Icons.jsx'
+import { Starburst, ArrowUp, Sun, Moon, TerminalIcon } from './components/Icons.jsx'
+
+const aliases = { help: 'fallback', whoami: 'about', ls: 'projects', 'sudo hire kavleen': 'contact' }
 
 const matchRoute = (text) => {
-  const t = text.toLowerCase()
+  const t = text.trim().toLowerCase()
+  if (aliases[t]) return aliases[t]
+  if (routes.some((r) => r.key === t)) return t
   for (const r of routes) if (r.keywords.some((k) => t.includes(k))) return r.key
   return 'fallback'
 }
@@ -28,7 +32,7 @@ const useTypewriter = (text, onDone) => {
   return shown
 }
 
-const AssistantMessage = ({ sectionKey, onPick, onGrow }) => {
+const AssistantMessage = ({ sectionKey, onPick, onGrow, mode }) => {
   const [blocksReady, setBlocksReady] = useState(false)
   const intro = intros[sectionKey] ?? intros.fallback
   const shown = useTypewriter(intro, () => setBlocksReady(true))
@@ -41,16 +45,30 @@ const AssistantMessage = ({ sectionKey, onPick, onGrow }) => {
           {shown}
           {!blocksReady && <span className="cursor">▍</span>}
         </p>
-        {blocksReady && <Section sectionKey={sectionKey} onPick={onPick} />}
+        {blocksReady && <Section sectionKey={sectionKey} onPick={onPick} mode={mode} />}
       </div>
     </div>
   )
 }
 
-const Thinking = () => (
+const Thinking = ({ mode }) => (
   <div className="msg assistant">
     <div className="avatar thinking-avatar"><Starburst size={15} /></div>
-    <div className="msg-content"><span className="thinking">Thinking…</span></div>
+    <div className="msg-content"><span className="thinking">{mode === 'terminal' ? 'running…' : 'Thinking…'}</span></div>
+  </div>
+)
+
+const TerminalGreeting = ({ onPick }) => (
+  <div className="tgreet">
+    <p className="tline"><span className="tprompt">kavleen@portfolio</span><span className="muted">:~$</span> ./init.sh</p>
+    <p className="tline">{profile.name} — {profile.title} · {profile.location}</p>
+    <p className="tline muted">This portfolio answers questions. Type one, or run a command:</p>
+    <div className="chip-row">
+      {suggestions.map((s) => (
+        <button key={s.key} className="chip" onClick={() => onPick(s)}>{s.key}</button>
+      ))}
+    </div>
+    <p className="tline muted small">hint: whoami · ls · help · clear</p>
   </div>
 )
 
@@ -61,6 +79,7 @@ export default function App() {
   const [theme, setTheme] = useState(() =>
     localStorage.getItem('theme') ??
     (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+  const [mode, setMode] = useState(() => localStorage.getItem('mode') ?? 'claude')
   const endRef = useRef(null)
   const inputRef = useRef(null)
 
@@ -69,11 +88,17 @@ export default function App() {
     localStorage.setItem('theme', theme)
   }, [theme])
 
+  useEffect(() => {
+    document.documentElement.dataset.mode = mode
+    localStorage.setItem('mode', mode)
+  }, [mode])
+
   const scrollDown = () => { endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' }) }
   useEffect(() => { scrollDown() }, [messages, thinking])
 
   const ask = (text, key = matchRoute(text)) => {
     if (!text.trim() || thinking) return
+    if (text.trim().toLowerCase() === 'clear') { setMessages([]); setInput(''); return }
     setMessages((m) => [...m, { role: 'user', text }])
     setInput('')
     setThinking(true)
@@ -83,7 +108,7 @@ export default function App() {
     }, 500 + Math.random() * 400)
   }
 
-  const pick = (s) => ask(s.prompt, s.key)
+  const pick = (s) => ask(mode === 'terminal' ? s.key : s.prompt, s.key)
   const asked = new Set(messages.filter((m) => m.role === 'assistant').map((m) => m.key))
   const remaining = suggestions.filter((s) => !asked.has(s.key))
   const empty = messages.length === 0
@@ -95,15 +120,23 @@ export default function App() {
         <nav className="header-nav">
           <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
           <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-          <button className="icon-btn" aria-label="Toggle theme"
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-            {theme === 'dark' ? <Sun /> : <Moon />}
+          <button className="icon-btn" aria-label="Toggle terminal mode"
+            title={mode === 'terminal' ? 'Back to chat' : 'Terminal mode'}
+            onClick={() => setMode(mode === 'terminal' ? 'claude' : 'terminal')}>
+            {mode === 'terminal' ? <Starburst size={13} /> : <TerminalIcon />}
           </button>
+          {mode !== 'terminal' && (
+            <button className="icon-btn" aria-label="Toggle theme"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+              {theme === 'dark' ? <Sun /> : <Moon />}
+            </button>
+          )}
         </nav>
       </header>
 
       <main className={`thread ${empty ? 'empty' : ''}`}>
         {empty ? (
+          mode === 'terminal' ? <TerminalGreeting onPick={pick} /> :
           <div className="greeting">
             <Starburst size={38} className="greeting-mark" />
             <h1>Hi, I’m {profile.shortName}.</h1>
@@ -119,9 +152,9 @@ export default function App() {
             {messages.map((m, i) =>
               m.role === 'user'
                 ? <div key={i} className="msg user"><div className="user-bubble">{m.text}</div></div>
-                : <AssistantMessage key={i} sectionKey={m.key} onPick={pick} onGrow={scrollDown} />
+                : <AssistantMessage key={i} sectionKey={m.key} onPick={pick} onGrow={scrollDown} mode={mode} />
             )}
-            {thinking && <Thinking />}
+            {thinking && <Thinking mode={mode} />}
             <div ref={endRef} />
           </div>
         )}
@@ -131,7 +164,7 @@ export default function App() {
         {!empty && remaining.length > 0 && (
           <div className="chip-row center compact">
             {remaining.slice(0, 3).map((s) => (
-              <button key={s.key} className="chip small" onClick={() => pick(s)}>{s.label}</button>
+              <button key={s.key} className="chip small" onClick={() => pick(s)}>{mode === 'terminal' ? s.key : s.label}</button>
             ))}
           </div>
         )}
@@ -140,7 +173,7 @@ export default function App() {
             ref={inputRef}
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={`Ask anything about ${profile.shortName}…`}
+            placeholder={mode === 'terminal' ? 'type a command or question…' : `Ask anything about ${profile.shortName}…`}
             aria-label="Ask a question"
           />
           <button type="submit" className="send" disabled={!input.trim() || thinking} aria-label="Send">

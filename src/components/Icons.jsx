@@ -20,6 +20,12 @@ export const External = ({ size = 12 }) => (
   </svg>
 )
 
+export const TerminalIcon = ({ size = 15 }) => (
+  <svg width={size} height={size} viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <path d="M2.5 4l4 4-4 4M8.5 12.5h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+)
+
 export const Sun = ({ size = 16 }) => (
   <svg width={size} height={size} viewBox="0 0 16 16" fill="none" aria-hidden="true">
     <circle cx="8" cy="8" r="3.2" stroke="currentColor" strokeWidth="1.5" />

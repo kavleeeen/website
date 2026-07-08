@@ -98,17 +98,17 @@ const Contact = () => (
   </Stagger>
 )
 
-const Fallback = ({ onPick }) => (
+const Fallback = ({ onPick, mode }) => (
   <Stagger i={0}>
     <div className="chip-row" style={{ marginTop: 4 }}>
       {suggestions.map((s) => (
-        <button key={s.key} className="chip" onClick={() => onPick(s)}>{s.label}</button>
+        <button key={s.key} className="chip" onClick={() => onPick(s)}>{mode === 'terminal' ? s.key : s.label}</button>
       ))}
     </div>
   </Stagger>
 )
 
-export default function Section({ sectionKey, onPick }) {
+export default function Section({ sectionKey, onPick, mode }) {
   switch (sectionKey) {
     case 'about': return <About />
     case 'experience': return <Experience />
@@ -116,6 +116,6 @@ export default function Section({ sectionKey, onPick }) {
     case 'skills': return <Skills />
     case 'education': return <Education />
     case 'contact': return <Contact />
-    default: return <Fallback onPick={onPick} />
+    default: return <Fallback onPick={onPick} mode={mode} />
   }
 }
